@@ -5,7 +5,7 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 
 #set globals
 DAYS = list(range(1,32))
-MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+MONTHS = list(range(1,13))
 
 # Configure application
 app = Flask(__name__)
