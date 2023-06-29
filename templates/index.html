@@ -21,13 +21,13 @@
                 <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
                 <select name="day">
                     <option disabled selected>Day</option>
-                    {% for x in 31 %} <!-- TODO: find way to iterate up to 31 -->
+                    {% for x in g_days %}
                     <option value="{{ x }}">{{ x }}</option>
                     {% endfor %}
                 </select>
                 <select name="month">
                     <option disabled selected>Month</option>
-                    {% for y in 12 %} <!-- TODO: find way to iterate up to 12 -->
+                    {% for y in g_months %}
                     <option value="{{ y }}">{{ y }}</option>
                     {% endfor %}
                 </select>
@@ -48,11 +48,10 @@
                 </thead>
                 <tbody>
                     <!-- TODO: Loop through the database entries to display them in this table -->
-                    {% for name in birthdays %}
+                    {% for birthday in birthdays %}
                     <tr>
                         <td>{{ birthdays.name }}</td>
-                        <td>{{ birthdays.day }}</td>
-                        <td>{{ birthdays.month }}</td>
+                        <td>{{ birthdays.month }}/{{ birthdays.day }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
